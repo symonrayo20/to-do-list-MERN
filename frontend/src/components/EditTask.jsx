@@ -59,7 +59,7 @@ const EditTask = ({ taskEdit, onClose }) => {
                         <label className="text-xl mb-1">Task</label>
                         <input 
                             type="text" 
-                            className="px-2 py-1 border-2 border-stone-400 rounded outline-none w-full" 
+                            className="p-2 border-2 border-stone-400 rounded outline-stone-500 w-full" 
                             placeholder="Enter a Task" 
                             value={task}
                             onChange={(e) => setTask(e.target.value)}
@@ -68,7 +68,7 @@ const EditTask = ({ taskEdit, onClose }) => {
                     <div className="flex flex-col">
                         <label className="text-xl mb-1">Category</label>
                         <select 
-                            className="border-2 border-stone-400 px-2 py-1 outline-none"
+                            className="border-2 border-stone-400 p-2 outline-stone-500 cursor-pointer"
                             value={category}
                             onChange={(e) => setCategory(e.currentTarget.value)}
                         >

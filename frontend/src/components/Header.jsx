@@ -6,9 +6,11 @@ const Header = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div className="flex">
-            <h1 className="flex-1 text-center text-4xl font-semibold text-gray-600">To Do List</h1>
-            <Button color="gray" text="Add Task" onClick={() => setShowModal(true)} />
+        <div className="relative">
+            <h1 className="text-center text-4xl font-semibold text-gray-600">My Tasks</h1>
+            <div className="absolute right-0 top-0">
+                <Button color="gray" text="Add Task" onClick={() => setShowModal(true)} />
+            </div>
 
             {showModal && <AddTask onClose={() => setShowModal(false)} />}
         </div>

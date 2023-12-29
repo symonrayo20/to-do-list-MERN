@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import {Link, useNavigate, useParams} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import { TaskContext } from "../pages/Home";
