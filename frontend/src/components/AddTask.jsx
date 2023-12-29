@@ -14,7 +14,7 @@ const AddTask = ({ onClose }) => {
     
     const addTask = () => {
         const newtask = {task, category};
-        axios.post("http://localhost:8000/tasks/create", newtask)
+        axios.post("/tasks/create", newtask)
             .then((res) => {
                 setTasks([...tasks, res.data]);
                 enqueueSnackbar("New Task Added Successfully", {variant: "success"});

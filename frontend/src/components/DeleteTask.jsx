@@ -15,7 +15,7 @@ const DeleteTask = ({taskDelete, onClose}) => {
     }
 
     const deleteTask = () => {
-        axios.delete(`http://localhost:8000/tasks/delete/${taskDelete._id}`)
+        axios.delete(`/tasks/delete/${taskDelete._id}`)
             .then(() => {
                 setTasks(tasks.filter(task => task._id !== taskDelete._id));
                 enqueueSnackbar("Deleted Successfully", {variant: "success"});

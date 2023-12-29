@@ -24,7 +24,7 @@ const EditTask = ({ taskEdit, onClose }) => {
 
     const editTask = () => {
         const data = {task, category};
-        axios.put(`http://localhost:8000/tasks/edit/${taskEdit._id}`, data)
+        axios.put(`/tasks/edit/${taskEdit._id}`, data)
             .then((res) => {
                 setTasks(tasks.map((theTask => {
                     return theTask._id === taskEdit._id ? res.data.data : theTask;

@@ -16,7 +16,7 @@ const Task = ({task}) => {
     const navigate = useNavigate();
 
     const taskCompleted = () => {
-        axios.put(`http://localhost:8000/tasks/complete/${task._id}`)
+        axios.put(`/tasks/complete/${task._id}`)
             .then((res) => {
                 setTasks(tasks.map(theTask => {
                     return theTask._id === task._id ? res.data.data : theTask;

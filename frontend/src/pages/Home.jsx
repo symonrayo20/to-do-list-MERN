@@ -9,7 +9,7 @@ import PulseLoader from "react-spinners/PulseLoader"
 export const TaskContext = React.createContext();
 
 export const fetchTasks = async () => {
-    const res = await fetch('http://localhost:8000/tasks');
+    const res = await fetch('/tasks');
     const data = await res.json();
     return data;
 }
@@ -19,7 +19,7 @@ const Home = () => {
     const [loading, setLoading] = useState(false);
     useEffect( () => {
         setLoading(true);
-        axios.get("http://localhost:8000/tasks")
+        axios.get("/tasks")
             .then((res) => {
                 setTasks(res.data);
                 setLoading(false);
