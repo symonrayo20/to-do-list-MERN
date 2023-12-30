@@ -26,10 +26,9 @@ mongoose.connect(process.env.MONGO_DB)
             console.log(`app is listening to port: ${process.env.PORT}`);
         })
 
-        app.use(express.static(path.resolve(getDirName(import.meta.url), "frontend/dist")));
+        app.use(express.static(path.resolve(getDirName(import.meta.url), " frontend/dist")));
         app.get("*", (req, res) => {
-            res.sendFile(path.resolve(getDirName(import.meta.url), "frontend/dist/index.html"));
-            console.log(path.join(getDirName(import.meta.url)), "frontend/dist");
+            res.sendFile(path.resolve(getDirName(import.meta.url), " frontend/dist/index.html"));
         })
 
     })
