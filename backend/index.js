@@ -1,10 +1,10 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import { PORT, mongoDB_URL } from './config.js';
+import * as mongoose from 'mongoose';
 import taskRoute from './routes/Task.js';
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from 'url'
+import "dotenv/config";
 
 const app = express();
 
@@ -23,11 +23,11 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(getDirName(import.meta.url), "../frontend/dist/index.html"));
 })
 
-mongoose.connect(mongoDB_URL)
+mongoose.connect(process.env.MONGO_DB)
     .then(() => {
         console.log("Connected to MongoDB");
-        app.listen(PORT, () => {
-            console.log(`app is listening to port: ${PORT}`);
+        app.listen(process.env.PORT, () => {
+            console.log(`app is listening to port: ${process.env.PORT}`);
         })
     })
     .catch((err) => {
