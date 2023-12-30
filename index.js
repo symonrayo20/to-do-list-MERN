@@ -1,6 +1,6 @@
 import express from 'express';
 import * as mongoose from 'mongoose';
-import taskRoute from './routes/Task.js';
+import taskRoute from './backend/routes/Task.js';
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from 'url'
@@ -25,10 +25,10 @@ mongoose.connect(process.env.MONGO_DB)
     app.listen(process.env.PORT, () => {
         console.log(`app is listening to port: ${process.env.PORT}`);
     })
-    app.use(express.static("../frontend/dist"));
-    console.log(getDirName(import.meta.url));
+    app.use(express.static(path.resolve(getDirName(import.meta.url), "frontend/dist")));
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(getDirName(import.meta.url), "../frontend/dist/index.html"));
+        res.sendFile(path.resolve(getDirName(import.meta.url), "frontend/dist/index.html"));
+        console.log(path.join(getDirName(import.meta.url)), "frontend/dist");
         })
     })
     .catch((err) => {
