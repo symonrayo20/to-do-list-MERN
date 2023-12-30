@@ -33,7 +33,7 @@ const Home = () => {
 
     return (
         <div className='flex justify-center my-10'>
-            <div className='w-full max-w-[1200px] mx-[100px] px-6 py-4 rounded-lg border-t-8 border-t-stone-500 bg-[#F4F4F4]'>
+            <div className='w-full max-w-[700px] mx-[100px] px-6 py-4 rounded-lg border-t-8 border-t-stone-500 bg-[#F4F4F4]'>
                 <TaskContext.Provider value={{ tasks, setTasks }} >
                     <Header />
                     <Navbar />

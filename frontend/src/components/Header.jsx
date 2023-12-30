@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <div className="relative">
-            <h1 className="text-center text-4xl font-semibold text-gray-600">My Tasks</h1>
+            <h1 className="text-center text-2xl lg:text-3xl font-semibold text-gray-600">My Tasks</h1>
             <div className="absolute right-0 top-0">
                 <Button color="gray" text="Add Task" onClick={() => setShowModal(true)} />
             </div>

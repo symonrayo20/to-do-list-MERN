@@ -20,16 +20,18 @@ const getDirName = function (moduleUrl) {
 
 
 mongoose.connect(process.env.MONGO_DB)
-.then(() => {
-    console.log("Connected to MongoDB");
-    app.listen(process.env.PORT, () => {
-        console.log(`app is listening to port: ${process.env.PORT}`);
-    })
-    app.use(express.static(path.resolve(getDirName(import.meta.url), "frontend/dist")));
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(getDirName(import.meta.url), "frontend/dist/index.html"));
-        console.log(path.join(getDirName(import.meta.url)), "frontend/dist");
+    .then(() => {
+        console.log("Connected to MongoDB");
+        app.listen(process.env.PORT, () => {
+            console.log(`app is listening to port: ${process.env.PORT}`);
         })
+
+        app.use(express.static(path.resolve(getDirName(import.meta.url), "frontend/dist")));
+        app.get("*", (req, res) => {
+            res.sendFile(path.resolve(getDirName(import.meta.url), "frontend/dist/index.html"));
+            console.log(path.join(getDirName(import.meta.url)), "frontend/dist");
+        })
+
     })
     .catch((err) => {
         console.log(err);

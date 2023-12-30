@@ -1,7 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { TaskContext } from "../pages/Home";
 import { fetchTasks } from "../pages/Home";
-import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -27,7 +26,7 @@ const Navbar = () => {
                 to="/"
                 onClick={allTasks}
                 className={({ isActive }) =>
-                    `py-[12px] px-4 rounded-3xl font-medium "
+                    `text-xs py-[10px] px-3 rounded-3xl font-medium "
                     ${isActive ? "bg-[#C4C4C4]" : "bg-[#E4E4E4] hover:bg-[#D4D4D4]"}`}>
                 All
             </NavLink>
@@ -35,7 +34,7 @@ const Navbar = () => {
                 to="/work"
                 onClick={workTasks}
                 className={({ isActive }) =>
-                    `py-[12px] px-4 rounded-3xl font-medium "
+                    `text-xs py-[10px] px-3 rounded-3xl font-medium "
                     ${isActive ? "bg-[#C4C4C4]" : "bg-[#E4E4E4] hover:bg-[#D4D4D4]"}`}>
                 Work
             </NavLink>
@@ -43,7 +42,7 @@ const Navbar = () => {
                 to="/personal"
                 onClick={personalTasks}
                 className={({ isActive }) =>
-                    `py-[12px] px-4 rounded-3xl font-medium "
+                    `text-xs py-[10px] px-3 rounded-3xl font-medium "
                     ${isActive ? "bg-[#C4C4C4]" : "bg-[#E4E4E4] hover:bg-[#D4D4D4]"}`}>
                 Personal
             </NavLink>

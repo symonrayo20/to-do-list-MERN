@@ -32,14 +32,14 @@ const DeleteTask = ({taskDelete, onClose}) => {
             onClick={onClosed}
         >
             <div 
-                className="relative w-[600px] h-[270px] mt-16 px-5 bg-white rounded"
+                className="relative w-[500px] h-[250px] mt-16 px-5 bg-white rounded"
                 onClick={(e) => e.stopPropagation()}
             >   
                 <div className="">
-                    <h1 className="text-3xl text-center mt-2 mb-5  font-semibold text-stone-700">Delete Task</h1>
+                    <h1 className="text-2xl text-center mt-2 mb-5  font-semibold text-stone-700">Delete Task</h1>
                 </div>
 
-                <h1 className="text-center my-10">
+                <h1 className="text-sm text-center my-10">
                     Are You Sure You Want to Delete This Task?
                 </h1>
 

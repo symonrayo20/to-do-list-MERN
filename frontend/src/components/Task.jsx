@@ -29,27 +29,27 @@ const Task = ({task}) => {
     }
 
     return (
-        <div className="flex items-center shadow-md py-4 px-6 rounded-lg">
+        <div className="flex items-center shadow-md py-3 px-5 rounded-lg">
             <Link to={`/complete/${task._id}`} onClick={taskCompleted}>
                 <input
                     disabled={task.isComplete}
                     defaultChecked={task.isComplete}
-                    className={`h-5 w-5 mr-8 ${task.isComplete || "cursor-pointer"}`}
+                    className={`h-3 w-3 mr-8 ${task.isComplete || "cursor-pointer"}`}
                     type="checkbox"
                 />
             </Link>
             <div className="flex-1">
-                <p className={`text-xl font-medium ${task.isComplete && "line-through"}`}>{task.task}</p>
-                <p>{new Date(task.createdAt).toLocaleString()}</p>
+                <p className={`text-base font-medium ${task.isComplete && "line-through"}`}>{task.task}</p>
+                <p className="text-sm">{new Date(task.createdAt).toLocaleString()}</p>
             </div>
             <div className="flex gap-x-4">
                 {task.isComplete || 
                     <Link to={`/edit/${task._id}`} onClick={() => setEditShowModal(true)}>
-                        <MdEdit className="text-2xl text-green-700 cursor-pointer" />
+                        <MdEdit className="text-base text-green-700 cursor-pointer" />
                     </Link>
                 }
                 <Link to={`/delete/${task._id}`} onClick={() => setDeleteShowModal(true)}>
-                    <MdDelete className="text-2xl text-red-700 cursor-pointer" />
+                    <MdDelete className="text-base text-red-700 cursor-pointer" />
                 </Link>
             </div>
 
